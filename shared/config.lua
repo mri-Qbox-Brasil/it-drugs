@@ -256,7 +256,7 @@ Config.ProcessingTables = { -- Create processing table
                 label = 'Joint',
                 ingrediants = {
                     ['weed_lemonhaze'] = 3,
-                    ['paper'] = 1
+                    ['rolling_paper'] = 1
                 },
                 outputs = {
                     ['joint'] = 2
