@@ -377,7 +377,8 @@ Config.Drugs = { -- Create you own drugs
 -- │                        |___/ │
 -- └──────────────────────────────┘
 
-Config.EnableSelling = true -- Enable selling system
+---@desativado Estamos usando o qbx_drugs para vendas de drogas (é melhor!)
+Config.EnableSelling = false -- Enable selling system
 
 Config.MinimumCops = 0 -- Minimum cops required to sell drugs
 Config.OnlyCopsOnDuty = true -- Check if cops are on-duty (Only QBCore).
