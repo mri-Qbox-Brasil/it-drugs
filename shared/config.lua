@@ -71,7 +71,7 @@ Config.PlayerPlantLimit = 10 -- Max amount of plants a player can have simultane
 -- └───────────────────────────┘
 
 Config.OnlyZones = false -- Allow drug growth only in defined zones
-Config.GlobalGrowTime = 30 -- Time in minutes for a plant to grow
+Config.GlobalGrowTime = 1 -- Time in minutes for a plant to grow
 
 Config.Zones = {
     ['weed_zone_one'] = { -- Zone id (Musst be unique)
@@ -137,6 +137,7 @@ Config.AllowedGrounds = {   -- Allowed ground types for planting
     -461750719,
     1333033863,
     -1907520769,
+    1144315879, -- canteiros
 }
 
 Config.WaterDecay = 1 -- Percent of water that decays every minute
@@ -187,6 +188,10 @@ Config.PlantTypes = {
         [2] = {"bkr_prop_weed_bud_02b", 0},
         [3] = {"bkr_prop_weed_bud_02a", 0},
     },
+    ["tomate_plant"] = {
+        [1] = {"bkr_prop_tomato_plant_01a", 0},
+        [2] = {"bkr_prop_tomato_plant_01b", 0},
+    }
 }
 
 Config.Plants = { -- Create seeds for drugs
@@ -314,6 +319,7 @@ Config.ProcessingTables = { -- Create processing table
 -- └────────────────────────────┘
 
 --[[ Possible Drug Effects:
+    stressDecrease,
     runningSpeedIncrease, 
     infinateStamina,
     moreStrength,
@@ -343,6 +349,7 @@ Config.Drugs = { -- Create you own drugs
         time = 80, -- Time in seconds of the Effects
         effects = { -- Effects: runningSpeedIncrease, infinateStamina, moreStrength, healthRegen, foodRegen, drunkWalk, psycoWalk, outOfBody, cameraShake, fogEffect, confusionEffect, whiteoutEffect, intenseEffect, focusEffect
             'intenseEffect',
+            'stressDecrease',
             'healthRegen',
             'moreStrength',
             'drunkWalk'

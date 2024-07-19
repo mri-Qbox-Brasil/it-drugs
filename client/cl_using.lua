@@ -3,6 +3,7 @@ local cooldowns = {}
 
 local drugEffects = {
     ['runningSpeedIncrease'] = false,
+    ['stressDecrease'] = false,
     ['infinateStamina'] = false,
     ['moreStrength'] = false,
     ['healthRegen'] = false,
@@ -210,6 +211,22 @@ CreateThread(function()
                 SetPlayerMeleeWeaponDamageModifier(pid, 2.0)
             end
             Wait(5)
+        else
+            Wait(5000)
+        end
+    end
+end)
+
+CreateThread(function()
+    while true do
+        if drugEffects['stressDecrease'] then
+            if it.getCoreName() == "qb-core" then
+                TriggerServerEvent('hud:server:RelieveStress', math.random(2))
+                Wait(4000)
+            elseif it.getCoreName() == "esx" then
+                TriggerServerEvent('esx_status:set', 'stress', 0)
+                Wait(4000)
+            end
         else
             Wait(5000)
         end
