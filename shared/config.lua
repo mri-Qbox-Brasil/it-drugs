@@ -126,7 +126,7 @@ Config.Zones = {
 
 Config.PlantDistance = 1.5 -- minimum Distance between two plants
 
-Config.OnlyAllowedGrounds = false -- Allow drug growth only on allowed grounds
+Config.OnlyAllowedGrounds = true -- Allow drug growth only on allowed grounds
 Config.AllowedGrounds = {   -- Allowed ground types for planting
     1109728704, -- fields
     -1942898710, -- grass/dirt
