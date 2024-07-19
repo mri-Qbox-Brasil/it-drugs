@@ -15,7 +15,7 @@ Locales = Locales or {}
     between the default languages that you will find within locales/*,
     if yours is not there, feel free to create it!
 ]]
-Config.Language = 'en'
+Config.Language = 'pt-br'
 Config.Target = 'ox_target' -- Target system ('qb-target', 'ox_target' or false to disable)
 
 --[[
@@ -504,7 +504,7 @@ end
     Debug mode, you can see all kinds of prints/logs using debug,
     but it's only for development.
 ]]
-Config.EnableVersionCheck = true -- Enable version check
+Config.EnableVersionCheck = false -- Enable version check
 Config.Branch = 'main' -- Set to 'master' to use the master branch, set to 'development' to use the dev branch
 Config.Debug = false -- Set to true to enable debug mode
 Config.DebugPoly = false -- Set to true to enable debug mode for PolyZone

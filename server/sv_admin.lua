@@ -4,7 +4,7 @@ if it.getCoreName() == 'esx' then
 
     ESX.RegisterCommand({_U('COMMAND__ADMINMENU')}, 'user', function(xPlayer, args, showError)
         local src = xPlayer.source
-        if IsPlayerAceAllowed(src, 'it-drugs') then
+        if IsPlayerAceAllowed(src, 'admin') then
             if args[1] == nil then
                 ShowNotification(src, _U('NOTIFICATION__ADMINMENU__USAGE'):format(_U('COMMAND__ADMINMENU')), "info")
                 return
@@ -28,7 +28,7 @@ if it.getCoreName() == 'esx' then
 
     ESX.RegisterCommand({_U('COMMAND__GROUNDHASH')}, 'user', function(xPlayer, args, showError)
         local src = xPlayer.source
-        if IsPlayerAceAllowed(src, 'it-drugs') then
+        if IsPlayerAceAllowed(src, 'admin') then
             TriggerClientEvent('it-drugs:client:showGroundHash', src)
         else
             -- get user license
@@ -44,7 +44,7 @@ elseif it.getCoreName() == 'qb-core' then
 
     QbCore.Commands.Add(_U('COMMAND__ADMINMENU'), _U('NOTIFICATION__ADMINMENU__USAGE'):format(_U('COMMAND__ADMINMENU')), {{name= 'type', help = 'plants/tables'}}, true, function(source, args)
         local src = source
-        if IsPlayerAceAllowed(src, 'it-drugs') then
+        if IsPlayerAceAllowed(src, 'admin') then
     
             if args[1] == nil then
                 ShowNotification(src, _U('NOTIFICATION__ADMINMENU__USAGE'):format(_U('COMMAND__ADMINMENU')), "info")
@@ -69,7 +69,7 @@ elseif it.getCoreName() == 'qb-core' then
 
     QbCore.Commands.Add(_U('COMMAND__GROUNDHASH'), _U('COMMAND__GROUNDHASH__HELP'), {}, false, function(source, args)
         local src = source
-        if IsPlayerAceAllowed(src, 'it-drugs') then
+        if IsPlayerAceAllowed(src, 'admin') then
             TriggerClientEvent('it-drugs:client:showGroundHash', src)
         else
             -- get user license

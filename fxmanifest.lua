@@ -13,7 +13,7 @@ shared_scripts {
     'locales/*.lua',
     '@ox_lib/init.lua',
     'bridge/**/shared.lua',
-    '@es_extended/imports.lua',
+    -- '@es_extended/imports.lua',
 }
 
 client_scripts {
