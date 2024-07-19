@@ -1,179 +1,178 @@
-Locales['en'] = {
+Locales['pt-br'] = {
 
-    ['MENU__DEALER'] = 'Dealer: %s',
-    ['MENU__DEALER__DESC'] = 'Buy this for $%g a pice',
+    ['MENU__DEALER'] = 'Vendedor: %s',
+    ['MENU__DEALER__DESC'] = 'Compre isso por R$%g cada',
 
     ['MENU__PLANT'] = '%s',
-    ['MENU__DEAD__PLANT'] = 'Dead Plant',
+    ['MENU__DEAD__PLANT'] = 'Planta Morta',
 
-    ['MENU__PLANT__LIFE'] = 'Health',
-    ['MENU__PLANT__LIFE__META'] = 'The health of the plant, if it reaches 0 the plant will die',
+    ['MENU__PLANT__LIFE'] = 'Saúde',
+    ['MENU__PLANT__LIFE__META'] = 'A saúde da planta, se chegar a 0 a planta morrerá',
     
-    ['MENU__PLANT__STAGE'] = 'Stage',
-    ['MENU__PLANT__STAGE__META'] = 'The stage of the plant, if it reaches 100 the plant can be harvested',
+    ['MENU__PLANT__STAGE'] = 'Estágio',
+    ['MENU__PLANT__STAGE__META'] = 'O estágio da planta, se chegar a 100 a planta pode ser colhida',
 
-    ['MENU__PLANT__FERTILIZER'] = 'Fertilizer',
-    ['MENU__PLANT__FERTILIZER__META'] = 'Every plant need nutritions to grow, be sure to fertilize your plant',
+    ['MENU__PLANT__FERTILIZER'] = 'Fertilizante',
+    ['MENU__PLANT__FERTILIZER__META'] = 'Toda planta precisa de nutrientes para crescer, certifique-se de fertilizar sua planta',
     
-    ['MENU__PLANT__WATER'] = 'Water',
-    ['MENU__PLANT__WATER__META'] = 'Be sure your plant always have some water',
+    ['MENU__PLANT__WATER'] = 'Água',
+    ['MENU__PLANT__WATER__META'] = 'Certifique-se de que sua planta sempre tenha um pouco de água',
 
-    ['MENU__PLANT__DESTROY'] = 'Destroy',
-    ['MENU__PLANT__DESTROY__DESC'] = 'Destroy this plant',
+    ['MENU__PLANT__DESTROY'] = 'Destruir',
+    ['MENU__PLANT__DESTROY__DESC'] = 'Destruir esta planta',
 
-    ['MENU__PLANT__HARVEST'] = 'Harvest',
-    ['MENU__PLANT__HARVEST__DESC'] = 'Harvest this plant',
+    ['MENU__PLANT__HARVEST'] = 'Colher',
+    ['MENU__PLANT__HARVEST__DESC'] = 'Colher esta planta',
 
-    ['MENU__ITEM'] = 'Items',
-    ['MENU__ITEM__DESC'] = 'Use this item to take care of your plant',
+    ['MENU__ITEM'] = 'Itens',
+    ['MENU__ITEM__DESC'] = 'Use este item para cuidar da sua planta',
 
+    ['MENU__PROCESSING'] = 'Processamento',
+    ['MENU__RECIPE__DESC'] = 'Processe suas drogas com esta receita',
+
+    ['MENU__UNKNOWN__INGREDIANT'] = 'Ingrediente Desconhecido',
+    ['MENU__INGREDIANT__DESC'] = 'Você precisa de %g deste ingrediente',
+
+    ['MENU__TABLE__PROCESS'] = 'Processar Drogas',
+    ['MENU__TABLE__PROCESS__DESC'] = 'Começar a processar drogas',
+
+    ['MENU__TABLE__REMOVE'] = 'Remover Mesa',
+    ['MENU__TABLE__REMOVE__DESC'] = 'Recuperar esta mesa',
+
+    ['MENU__SELL'] = 'Vender',
+    ['MENU__SELL__DEAL'] = 'Negociar',
+    ['MENU__SELL__DESC'] = 'Vender %s (x%g) por R$%g',
+
+    ['MENU__SELL__ACCEPT'] = 'Aceitar oferta',
+    ['MENU__SELL__ACCEPT__DESC'] = 'Aceitar a oferta atual',
+
+    ['MENU__SELL__REJECT'] = 'Rejeitar oferta',
+    ['MENU__SELL__REJECT__DESC'] = 'Rejeitar a oferta atual',
+
+    ['MENU__ADMIN__PLANT__MAIN'] = 'Gerenciamento de Plantas',
+    ['MENU__ADMIN__TABLE__MAIN'] = 'Gerenciamento de Mesas',
     
-    ['MENU__PROCESSING'] = 'Proccessing',
-    ['MENU__RECIPE__DESC'] = 'Process your drugs with this recipe',
+    ['MENU__PLANT__COUNT'] = 'Contagem Total de Plantas',
+    ['MENU__PLANT__COUNT__DESC'] = 'Atualmente há %g plantas ativas',
 
-    ['MENU__UNKNOWN__INGREDIANT'] = 'Unknown Ingrediant',
-    ['MENU__INGREDIANT__DESC'] = 'You need %g of this ingrediant',
+    ['MENU__TABLE__COUNT'] = 'Contagem Total de Mesas',
+    ['MENU__TABLE__COUNT__DESC'] = 'Atualmente há %g mesas ativas',
 
-    ['MENU__TABLE__PROCESS'] = 'Process Drugs',
-    ['MENU__TABLE__PROCESS__DESC'] = 'Start processing drugs',
+    ['MENU__LIST__PLANTS'] = 'Ver plantas por Distância',
+    ['MENU__LIST__PLANTS__DESC'] = 'Ver informações detalhadas sobre cada planta',
 
-    ['MENU__TABLE__REMOVE'] = 'Remove Table',
-    ['MENU__TABLE__REMOVE__DESC'] = 'Get this table back',
+    ['MENU__LIST__TABLES'] = 'Ver mesas por Distância',
+    ['MENU__LIST__TABLES__DESC'] = 'Ver informações detalhadas sobre cada mesa',
 
-    ['MENU__SELL'] = 'Sell',
-    ['MENU__SELL__DEAL'] = 'Deal',
-    ['MENU__SELL__DESC'] = 'Sell %s (x%g) for $%g',
+    ['MENU__ADD__BLIPS'] = 'Adicionar Blips ao Mapa',
+    ['MENU__ADD__PLANT__BLIPS__DESC'] = 'Mostrar todas as localizações das plantas no mapa',
+    ['MENU__ADD_TABLE__BLIPS__DESC'] = 'Mostrar todas as localizações das mesas no mapa',
 
-    ['MENU__SELL__ACCEPT'] = 'Accept offer',
-    ['MENU__SELL__ACCEPT__DESC'] = 'Accept the current offer',
+    ['MENU__REMOVE__BLIPS'] = 'Remover Blips do Mapa',
+    ['MENU__REMOVE__PLANT__BLIPS__DESC'] = 'Remover todas as localizações das plantas do mapa',
+    ['MENU__REMOVE__TABLE__BLIPS__DESC'] = 'Remover todas as localizações das mesas do mapa',
 
-    ['MENU__SELL__REJECT'] = 'Reject offer',
-    ['MENU__SELL__REJECT__DESC'] = 'Reject the current offer',
+    ['MENU__PLANT__LIST'] = 'Todas as Plantas',
+    ['MENU__TABLE__LIST'] = 'Todas as Mesas',
 
-    ['MENU__ADMIN__PLANT__MAIN'] = 'Plant Management',
-    ['MENU__ADMIN__TABLE__MAIN'] = 'Table Management',
+    ['MENU__DIST'] = 'Distância: %gm',
+
+    ['MENU__PLANT__ID'] = 'Planta: %s',
+    ['MENU__TABLE__ID'] = 'Mesa: %s',
+
+    ['MENU__OWNER'] = 'Proprietário',
+    ['MENU__OWNER__META'] = 'Clique para copiar o identificador do proprietário',
+
+    ['MENU__PLANT__LOCATION'] = 'Localização',
+    ['MENU__LOCATION__DESC'] = 'Rua: %s | Coordenadas: (%g, %g, %g)',
+    ['MENU__LOCATION__META'] = 'Clique para copiar as coordenadas',
+
+    ['MENU__PLANT__TELEPORT'] = 'Teleportar para a Planta',
+    ['MENU__PLANT__TELEPORT__DESC'] = 'Teleportar para a localização da planta',
+
+    ['MENU__TABLE__TELEPORT'] = 'Teleportar para a Mesa',
+    ['MENU__TABLE__TELEPORT__DESC'] = 'Teleportar para a localização da mesa',
+
+    ['MENU__ADD__BLIP'] = 'Adicionar ao Mapa',
+    ['MENU__ADD__PLANT__BLIP__DESC'] = 'Criar um blip para esta planta',
+    ['MENU__ADD__TABLE__BLIP__DESC'] = 'Criar um blip para esta mesa',
+
+    ['MENU__TABLE__DESTROY'] = 'Destruir Mesa',
+    ['MENU__TABLE__DESTROY__DESC'] = 'Destruir esta mesa',
+
+    ['NOTIFICATION__NO__MONEY'] = 'Você não tem dinheiro suficiente com você',
+    ['NOTIFICATION__BUY__SUCCESS'] = 'Você comprou com sucesso alguns %s',
+
+    ['NOTIFICATION__IN__VEHICLE'] = 'Você não pode fazer isso em um veículo',
+    ['NOTIFICATION__CANT__PLACE'] = 'Você não pode fazer isso aqui',
+    ['NOTIFICATION__TO__NEAR'] = 'Você não pode plantar isso perto de outra planta',
+    ['NOTIFICATION__CANCELED'] = 'Cancelado...',
+    ['NOTIFICATION__NO__ITEMS'] = 'Você não tem itens para cuidar desta planta',
+
+    ['NOTIFICATION__NO__AMOUNT'] = 'Você precisa inserir uma quantidade',
+
+    ['NOTIFICATION__MISSING__INGIDIANT'] = 'Você não tem todos os ingredientes',
+    ['NOTIFICATION__SKILL__SUCCESS'] = 'Você processou uma droga',
+    ['NOTIFICATION__SKILL__ERROR'] = 'Você apertou a tecla errada',
+    ['NOTIFICATION__PROCESS__FAIL'] = 'Você falhou em processar a droga',
+
+    ['NOTIFICATION__CALLING__COPS'] = 'O comprador está chamando a polícia!',
+    ['NOTIFICATION__MAX__PLANTS'] = 'Por favor, cuide das suas plantas atuais primeiro',
+    ['NOTIFICATION__NOT__INTERESTED'] = 'O comprador não está interessado em comprar agora!',
+    ['NOTIFICATION__ALLREADY__SPOKE'] = 'Você já falou com este local',
+    ['NOTIFICATION__NO__DRUGS'] = 'Você não tem nada que a pessoa queira',
+    ['NOTIFICATION__TO__LONG'] = 'Você perdeu tempo, então a pessoa foi embora',
+    ['NOTIFICATION__OFFER__REJECTED'] = 'Você rejeitou a oferta',
+    ['NOTIFICATION__SOLD__DRUG'] = 'Você recebeu R$%g',
+    ['NOTIFICATION__SELL__FAIL'] = 'Você não conseguiu vender seu %g!',
+    ['NOTIFICATION__NO__ITEM__LEFT'] = 'Você não tem nenhum %g para vender!',
+    ['NOTIFICATION__STOLEN__DRUG'] = 'Você foi roubado e não recebeu nenhum dinheiro',
+
+    ['NOTIFICATION__DRUG__NO__EFFECT'] = 'Esta droga não tem efeito',
+    ['NOTIFICATION__DRUG__ALREADY'] = 'Você já está sob a influência de uma droga.',
+    ['NOTIFICATION__DRUG__COOLDOWN'] = 'Você tem que esperar antes de poder tomar esta droga novamente',
+
+    ['NOTIFICATION__NO__PERMISSION'] = 'Você não tem permissão para fazer isso',
+    ['NOTIFICATION__ADMINMENU__USAGE'] = 'Por favor, use: /%s [plants/tables]',
+
+    ['NOTIFICATION__COPY__CLIPBOARD'] = 'Informação copiada para a área de transferência: %s',
     
-    ['MENU__PLANT__COUNT'] = 'Total Plant Count',
-    ['MENU__PLANT__COUNT__DESC'] = 'There are currently %g active plants',
+    ['NOTIFICATION__TELEPORTED'] = 'Teleportado para a localização da entidade',
 
-    ['MENU__TABLE__COUNT'] = 'Total Table Count',
-    ['MENU__TABLE__COUNT__DESC'] = 'There are currently %g active tables',
+    ['NOTIFICATION__PLANT__DESTROYED'] = 'Planta destruída com sucesso',
+    ['NOTIFICATION__TABLE__DESTROYED'] = 'Mesa destruída com sucesso',
 
-    ['MENU__LIST__PLANTS'] = 'View plants by Distance',
-    ['MENU__LIST__PLANTS__DESC'] = 'View detail infomration about each plant',
+    ['NOTIFICATION__ADD__BLIP'] = 'Blip adicionado ao mapa',
+    ['NOTIFICATION__REMOVE__BLIP'] = 'Blip removido do mapa',
 
-    ['MENU__LIST__TABLES'] = 'View tables by Distance',
-    ['MENU__LIST__TABLES__DESC'] = 'View detail infomration about each table',
+    ['PROGRESSBAR__SPAWN__PLANT'] = 'Plantando...',
+    ['PROGRESSBAR__HARVEST__PLANT'] = 'Colhendo...',
+    ['PROGRESSBAR__SOAK__PLANT'] = 'Regando...',
+    ['PROGRESSBAR__FERTILIZE__PLANT'] = 'Fertilizando...',
+    ['PROGRESSBAR__DESTROY__PLANT'] = 'Destruindo...',
 
-    ['MENU__ADD__BLIPS'] = 'Add Blips to Map',
-    ['MENU__ADD__PLANT__BLIPS__DESC'] = 'Show all plant locations on the map',
-    ['MENU__ADD_TABLE__BLIPS__DESC'] = 'Show all table locations on the map',
+    ['PROGRESSBAR__PLACE__TABLE'] = 'Colocando Mesa...',
+    ['PROGRESSBAR__REMOVE__TABLE'] = 'Removendo Mesa...',
+    ['PROGRESSBAR__PROCESS__DRUG'] = 'Processando...',
 
-    ['MENU__REMOVE__BLIPS'] = 'Remove Blips from Map',
-    ['MENU__REMOVE__PLANT__BLIPS__DESC'] = 'Remove all plant locations from the map',
-    ['MENU__REMOVE__TABLE__BLIPS__DESC'] = 'Remove all table locations from the map',
+    ['INTERACTION__PLACING__TEXT'] = '[E] - Colocar Planta / [G] - Cancelar',
+    ['INTERACTION__INTERACT_TEXT'] = '[E] - Interagir',
 
-    ['MENU__PLANT__LIST'] = 'All Plants',
-    ['MENU__TABLE__LIST'] = 'All Tables',
+    ['INPUT__AMOUNT__HEADER'] = 'Processamento',
+    ['INPUT__AMOUNT__TEXT'] = 'Quantidade',
+    ['INPUT__AMOUNT__DESCRIPTION'] = 'Quantos você quer processar?',
 
-    ['MENU__DIST'] = 'Distance: %gm',
+    ['INPUT__BUY__HEADER'] = 'Comprando',
+    ['INPUT__BUY__TEXT'] = 'Quantidade',
+    ['INPUT__BUY__DESCRIPTION'] = 'Quantos %s você quer comprar?',
 
-    ['MENU__PLANT__ID'] = 'Plant: %s',
-    ['MENU__TABLE__ID'] = 'Table: %s',
-
-    ['MENU__OWNER'] = 'Owner',
-    ['MENU__OWNER__META'] = 'Click to copy owner identifiere',
-
-    ['MENU__PLANT__LOCATION'] = 'Location',
-    ['MENU__LOCATION__DESC'] = 'Street: %s | Coordinates: (%g, %g, %g)',
-    ['MENU__LOCATION__META'] = 'Click top copy coords',
-
-    ['MENU__PLANT__TELEPORT'] = 'Teleport to Plant',
-    ['MENU__PLANT__TELEPORT__DESC'] = 'Teleport to the plant location',
-
-    ['MENU__TABLE__TELEPORT'] = 'Teleport to Table',
-    ['MENU__TABLE__TELEPORT__DESC'] = 'Teleport to the table location',
-
-    ['MENU__ADD__BLIP'] = 'Add to Map',
-    ['MENU__ADD__PLANT__BLIP__DESC'] = 'Create a blip for this plant',
-    ['MENU__ADD__TABLE__BLIP__DESC'] = 'Create a blip for this table',
-
-    ['MENU__TABLE__DESTROY'] = 'Destroy Table',
-    ['MENU__TABLE__DESTROY__DESC'] = 'Destroy this table',
-
-    ['NOTIFICATION__NO__MONEY'] = 'You don´t have enought money on you',
-    ['NOTIFICATION__BUY__SUCCESS'] = 'You successfuly bought some %s',
-
-    ['NOTIFICATION__IN__VEHICLE'] = 'You can´t do this in a Vehicle',
-    ['NOTIFICATION__CANT__PLACE'] = 'You can´t do this here',
-    ['NOTIFICATION__TO__NEAR'] = 'You can´t plant this near to another plant',
-    ['NOTIFICATION__CANCELED'] = 'Canceled...',
-    ['NOTIFICATION__NO__ITEMS'] = 'You have no items to take care of this plant',
-
-    ['NOTIFICATION__NO__AMOUNT'] = 'You need to enter an amount',
-
-    ['NOTIFICATION__MISSING__INGIDIANT'] = 'You don´t have all ingredients',
-    ['NOTIFICATION__SKILL__SUCCESS'] = 'You have processed on drug',
-    ['NOTIFICATION__SKILL__ERROR'] = 'You pressed the wrong key',
-    ['NOTIFICATION__PROCESS__FAIL'] = 'You faild to process the drug',
-
-    ['NOTIFICATION__CALLING__COPS'] = 'The buyer is calling the police!',
-    ['NOTIFICATION__MAX__PLANTS'] = 'Please take care of your current plants first',
-    ['NOTIFICATION__NOT__INTERESTED'] = 'Buyer is not interested to buy now!',
-    ['NOTIFICATION__ALLREADY__SPOKE'] = 'You already spoke with this local',
-    ['NOTIFICATION__NO__DRUGS'] = 'You have nothing that the person wants',
-    ['NOTIFICATION__TO__LONG'] = 'You wasted time so the person left',
-    ['NOTIFICATION__OFFER__REJECTED'] = 'You rejected the offer',  
-    ['NOTIFICATION__SOLD__DRUG'] = "You recieved $%g",
-    ['NOTIFICATION__SELL__FAIL'] = 'You could not sell your %g!',
-    ['NOTIFICATION__NO__ITEM__LEFT'] = 'You do not have any %g to sell!',
-    ['NOTIFICATION__STOLEN__DRUG'] = 'You were robbed and don´t get any money',
-
-    ['NOTIFICATION__DRUG__NO__EFFECT'] = 'This drug has no effect',
-    ['NOTIFICATION__DRUG__ALREADY'] = 'You are already under the influence of a drug.',
-    ['NOTIFICATION__DRUG__COOLDOWN'] = 'You have to wait before you can take this drug again',
-
-    ['NOTIFICATION__NO__PERMISSION'] = 'You do not have permission to do this',
-    ['NOTIFICATION__ADMINMENU__USAGE'] = 'Please use: /%s [plants/tables]',
-
-    ['NOTIFICATION__COPY__CLIPBOARD'] = 'Information copied to clipboard: %s',
-    
-    ['NOTIFICATION__TELEPORTED'] = 'Teleported to entity location',
-
-    ['NOTIFICATION__PLANT__DESTROYED'] = 'Plant got successfuly destroyed',
-    ['NOTIFICATION__TABLE__DESTROYED'] = 'Table got successfuly destroyed',
-
-    ['NOTIFICATION__ADD__BLIP'] = 'Added Blip to Map',
-    ['NOTIFICATION__REMOVE__BLIP'] = 'Removed Blip from Map',
-
-    ['PROGRESSBAR__SPAWN__PLANT'] = 'Planting...',
-    ['PROGRESSBAR__HARVEST__PLANT'] = 'Harvesting...',
-    ['PROGRESSBAR__SOAK__PLANT'] = 'Watering...',
-    ['PROGRESSBAR__FERTILIZE__PLANT'] = 'Fertilizing...',
-    ['PROGRESSBAR__DESTROY__PLANT'] = 'Destroying...',
-
-    ['PROGRESSBAR__PLACE__TABLE'] = 'Placing Table...',
-    ['PROGRESSBAR__REMOVE__TABLE'] = 'Removing Table...',
-    ['PROGRESSBAR__PROCESS__DRUG'] = 'Processing...',
-
-    ['INTERACTION__PLACING__TEXT'] = '[E] - Place Plant / [G] - Cancel',
-    ['INTERACTION__INTERACT_TEXT'] = '[E] - Interact',
-
-    ['INPUT__AMOUNT__HEADER'] = 'Processing',
-    ['INPUT__AMOUNT__TEXT'] = 'Amount',
-    ['INPUT__AMOUNT__DESCRIPTION'] = 'How many do you want to process?',
-
-    ['INPUT__BUY__HEADER'] = 'Buying',
-    ['INPUT__BUY__TEXT'] = 'Amount',
-    ['INPUT__BUY__DESCRIPTION'] = 'How many %s do you want to buy?',
-
-    ['TARGET__DEALER__LABLE'] = 'Check Dealer',
-    ['TARGET__PLANT__LABEL'] = 'Check Plant',
-    ['TARGET__TABLE__LABEL'] = 'Use Table',
-    ['TARGET__SELL__LABEL'] = 'Talk',
+    ['TARGET__DEALER__LABLE'] = 'Checar Vendedor',
+    ['TARGET__PLANT__LABEL'] = 'Checar Planta',
+    ['TARGET__TABLE__LABEL'] = 'Usar Mesa',
+    ['TARGET__SELL__LABEL'] = 'Conversar',
 
     ['COMMAND__ADMINMENU'] = 'drugadmin',
     ['COMMAND__GROUNDHASH'] = 'getGroundHash',
 
-    ['COMMAND__GROUNDHASH__HELP'] = 'Get the current ground hash'
+    ['COMMAND__GROUNDHASH__HELP'] = 'Obtenha o hash do chão atual'
 }
