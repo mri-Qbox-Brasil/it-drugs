@@ -138,6 +138,7 @@ Config.AllowedGrounds = {   -- Allowed ground types for planting
     1333033863,
     -1907520769,
     1144315879, -- canteiros
+    -2041329971, -- terra sandyshores
 }
 
 Config.WaterDecay = 1 -- Percent of water that decays every minute
