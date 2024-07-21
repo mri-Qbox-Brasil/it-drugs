@@ -270,8 +270,8 @@ Config.ProcessingTables = { -- Create processing table
                 processTime = 5,
                 failChance = 15,
                 animation = {
-                    dict = 'anim@gangops@facility@servers@bodysearch@',
-                    anim = 'player_search',
+                    dict = 'mini@repair',
+                    anim = 'fixing_a_ped',
                 }
             },
             -- Add more recipes here like this
@@ -304,7 +304,11 @@ Config.ProcessingTables = { -- Create processing table
                     ['cocaine'] = 2
                 },
                 processTime = 10,
-                failChance = 15
+                failChance = 15,
+                animation = {
+                    dict = 'mini@repair',
+                    anim = 'fixing_a_ped',
+                }
             },
         }
     },
