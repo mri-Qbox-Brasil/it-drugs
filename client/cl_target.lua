@@ -11,12 +11,12 @@ if Config.Debug and Config.Target then lib.print.info('Setting up Target System'
 -- Plant Target
 CreateThread(function()
     if Config.Target == 'qb-target' then
-        if Config.Debug then lib.print.info('Detected Target System: qb-target') end -- DEBUG
-        
-        if not exports['qb-target'] then 
-            if Config.Debug then lib.print.info('Target System Running: false') end -- DEBUG
-        else 
-            if Config.Debug then lib.print.info('Target System Running: true') end -- DEBUG
+        if Config.Debug then lib.print.info(_U('DEBUG__DETECTED_TARGET_SYSTEM'):format('qb-target')) end -- DEBUG
+
+        if not exports['qb-target'] then
+            if Config.Debug then lib.print.info(_U('DEBUG__TARGET_SYSTEM_STATUS'):format('false')) end -- DEBUG
+        else
+            if Config.Debug then lib.print.info(_U('DEBUG__TARGET_SYSTEM_STATUS'):format('true')) end -- DEBUG
         end
         -- Check if qb-target is running
         if not exports['qb-target'] then return end
@@ -36,14 +36,14 @@ CreateThread(function()
                 })
             end
         end
-        if Config.Debug then lib.print.info('Registerd all Plant Targets') end -- DEBUG
+        if Config.Debug then lib.print.info(_U('DEBUG__REGISTERED_ALL_PLANTS')) end -- DEBUG
     elseif Config.Target == 'ox_target' then
-        if Config.Debug then lib.print.info('Detected Target System: ox_target') end -- DEBUG
+        if Config.Debug then lib.print.info(_U('DEBUG__DETECTED_TARGET_SYSTEM'):format('ox_target')) end -- DEBUG
 
-        if not exports.ox_target then 
-            if Config.Debug then lib.print.info('Target System Running: false') end -- DEBUG
-        else 
-            if Config.Debug then lib.print.info('Target System Running: true') end -- DEBUG
+        if not exports.ox_target then
+            if Config.Debug then lib.print.info(_U('DEBUG__TARGET_SYSTEM_STATUS'):format('false')) end -- DEBUG
+        else
+            if Config.Debug then lib.print.info(_U('DEBUG__TARGET_SYSTEM_STATUS'):format('true')) end -- DEBUG
         end
         -- Check if ox target is running
         if not exports.ox_target then return end
@@ -63,7 +63,7 @@ CreateThread(function()
             end
         end
     end
-    if Config.Debug then lib.print.info('Registerd all Plant Targets') end -- DEBUG
+    if Config.Debug then lib.print.info(_U('DEBUG__REGISTERED_ALL_PLANTS')) end -- DEBUG
 end)
 
 
@@ -76,7 +76,7 @@ if Config.EnableDealers then
                         options = {
                             {
                                 icon = 'fas fa-eye',
-                                label = _U('TARGET__DEALER__LABLE'),
+                                label = _U('TARGET__DEALER__LABEL'),
                                 action = function (entity)
                                     TriggerEvent('it-drugs:client:showDealerMenu', k)
                                 end
@@ -93,7 +93,7 @@ if Config.EnableDealers then
                 if v.ped ~= nil then
                     exports.ox_target:addModel(v.ped, {
                         {
-                            label = _U('TARGET__DEALER__LABLE'),
+                            label = _U('TARGET__DEALER__LABEL'),
                             name = 'it-drugs-talk-dealer',
                             icon = 'fas fa-eye',
                             onSelect = function(data)
@@ -117,7 +117,7 @@ end
 -- │                                               |___/                 |___/          │
 -- └────────────────────────────────────────────────────────────────────────────────────┘
 -- Proccesing Target
-if Config.EnableProcessing then 
+if Config.EnableProcessing then
     CreateThread(function()
         if Config.Target == 'qb-target' then
             for k, v in pairs(Config.ProcessingTables) do

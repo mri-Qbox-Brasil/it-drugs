@@ -3,8 +3,8 @@ RegisterNetEvent('it-drugs:client:showAdminAlertBox', function(args)
     local username = args.username
 
     local alert = lib.alertDialog({
-        header = 'NO PERMISSION',
-        content = 'Add this your server.cfg file to give permission to this user:  \n add_ace identifier.'..userLicense..' it-drugs allow #'..username..' License  \n And restart your server to apply the changes',
+        header = _U('NOTIFICATION__NO__PERMS'),
+        content = _U('NOTIFICATION__NO__PERMS_CONTENT'):format(userLicense, username),
         centered = true,
         size = 'xl',
         cancel = true,
@@ -33,7 +33,7 @@ RegisterNetEvent('it-drugs:client:addAllAdminBlips', function(args)
     elseif type == 'tables' then
         local allTables = lib.callback.await('it-drugs:server:getTables', false)
         for _, data in pairs(allTables) do
-            AddAdminBlip(data.id, data.coords, 'Proccessing Table: '..Config.ProcessingTables[data.type].type, 'processing')
+            AddAdminBlip(data.id, data.coords, _U('BLIP__PROCESS_TABLE'):format(Config.ProcessingTables[data.type].type), 'processing')
         end
         ShowNotification(nil, _U('NOTIFICATION__ADD__BLIP'), "success")
     end
@@ -49,7 +49,7 @@ RegisterNetEvent('it-drugs:client:addAdminBlip', function(args)
         AddAdminBlip(id, coords, Config.Plants[entityType].label, 'plant')
         ShowNotification(nil, _U('NOTIFICATION__ADD__BLIP'), "success")
     elseif type == 'table' then
-        AddAdminBlip(id, coords, 'Proccessing Table: '..Config.ProcessingTables[entityType].type, 'processing')
+        AddAdminBlip(id, coords, _U('BLIP__PROCESS_TABLE'):format(Config.ProcessingTables[entityType].type), 'processing')
         ShowNotification(nil, _U('NOTIFICATION__ADD__BLIP'), "success")
     end
 end)
@@ -150,5 +150,5 @@ RegisterNetEvent('it-drugs:client:showGroundHash', function()
         lib.setClipboard(arg5)
         ShowNotification(nil, _U('NOTIFICATION__COPY__CLIPBOARD'):format(arg5), "success")
     end
-    
+
 end)

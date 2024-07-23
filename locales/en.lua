@@ -8,13 +8,13 @@ Locales['en'] = {
 
     ['MENU__PLANT__LIFE'] = 'Health',
     ['MENU__PLANT__LIFE__META'] = 'The health of the plant, if it reaches 0 the plant will die',
-    
+
     ['MENU__PLANT__STAGE'] = 'Stage',
     ['MENU__PLANT__STAGE__META'] = 'The stage of the plant, if it reaches 100 the plant can be harvested',
 
     ['MENU__PLANT__FERTILIZER'] = 'Fertilizer',
     ['MENU__PLANT__FERTILIZER__META'] = 'Every plant need nutritions to grow, be sure to fertilize your plant',
-    
+
     ['MENU__PLANT__WATER'] = 'Water',
     ['MENU__PLANT__WATER__META'] = 'Be sure your plant always have some water',
 
@@ -27,7 +27,7 @@ Locales['en'] = {
     ['MENU__ITEM'] = 'Items',
     ['MENU__ITEM__DESC'] = 'Use this item to take care of your plant',
 
-    
+
     ['MENU__PROCESSING'] = 'Proccessing',
     ['MENU__RECIPE__DESC'] = 'Process your drugs with this recipe',
 
@@ -52,7 +52,7 @@ Locales['en'] = {
 
     ['MENU__ADMIN__PLANT__MAIN'] = 'Plant Management',
     ['MENU__ADMIN__TABLE__MAIN'] = 'Table Management',
-    
+
     ['MENU__PLANT__COUNT'] = 'Total Plant Count',
     ['MENU__PLANT__COUNT__DESC'] = 'There are currently %g active plants',
 
@@ -101,6 +101,10 @@ Locales['en'] = {
     ['MENU__TABLE__DESTROY'] = 'Destroy Table',
     ['MENU__TABLE__DESTROY__DESC'] = 'Destroy this table',
 
+    ['NOTIFICATION__NO__PERMS'] = 'NO PERMISSION',
+    ['NOTIFICATION__NO__PERMS_CONTENT'] = 'Add this your server.cfg file to give permission to this user:  \n add_ace identifier.%s it-drugs allow #%s License  \n And restart your server to apply the changes',
+    ['NOTIFICATION__NO_DEALER_FOUND'] = 'No Dealer Found',
+    ['NOTIFICATION__DEALER_NOT_FOUND'] = 'Dealer not found.',
     ['NOTIFICATION__NO__MONEY'] = 'You don´t have enought money on you',
     ['NOTIFICATION__BUY__SUCCESS'] = 'You successfuly bought some %s',
 
@@ -123,7 +127,7 @@ Locales['en'] = {
     ['NOTIFICATION__ALLREADY__SPOKE'] = 'You already spoke with this local',
     ['NOTIFICATION__NO__DRUGS'] = 'You have nothing that the person wants',
     ['NOTIFICATION__TO__LONG'] = 'You wasted time so the person left',
-    ['NOTIFICATION__OFFER__REJECTED'] = 'You rejected the offer',  
+    ['NOTIFICATION__OFFER__REJECTED'] = 'You rejected the offer',
     ['NOTIFICATION__SOLD__DRUG'] = "You recieved $%g",
     ['NOTIFICATION__SELL__FAIL'] = 'You could not sell your %g!',
     ['NOTIFICATION__NO__ITEM__LEFT'] = 'You do not have any %g to sell!',
@@ -137,7 +141,7 @@ Locales['en'] = {
     ['NOTIFICATION__ADMINMENU__USAGE'] = 'Please use: /%s [plants/tables]',
 
     ['NOTIFICATION__COPY__CLIPBOARD'] = 'Information copied to clipboard: %s',
-    
+
     ['NOTIFICATION__TELEPORTED'] = 'Teleported to entity location',
 
     ['NOTIFICATION__PLANT__DESTROYED'] = 'Plant got successfuly destroyed',
@@ -167,7 +171,7 @@ Locales['en'] = {
     ['INPUT__BUY__TEXT'] = 'Amount',
     ['INPUT__BUY__DESCRIPTION'] = 'How many %s do you want to buy?',
 
-    ['TARGET__DEALER__LABLE'] = 'Check Dealer',
+    ['TARGET__DEALER__LABEL'] = 'Check Dealer',
     ['TARGET__PLANT__LABEL'] = 'Check Plant',
     ['TARGET__TABLE__LABEL'] = 'Use Table',
     ['TARGET__SELL__LABEL'] = 'Talk',
@@ -175,7 +179,18 @@ Locales['en'] = {
     ['COMMAND__ADMINMENU'] = 'drugadmin',
     ['COMMAND__GROUNDHASH'] = 'getGroundHash',
 
-    ['COMMAND__GROUNDHASH__HELP'] = 'Get the current ground hash'
+    ['COMMAND__GROUNDHASH__HELP'] = 'Get the current ground hash',
+    ['BLIP__PROCESS_TABLE'] = 'Processing Table: %s',
+    ['DEALER__POSITION'] ='New Dealer Position:',
+    ['INFO__NO_COPS'] = 'Not Enough Cops Online',
+    ['INFO__SELL_MENU_TIMEOUT'] = 'Sell Menu Timeout... Current Menu',
+    ['INFO__SETUP_TARGET'] = 'Setting up Target System',
+    ['INFO__DRUG_EFFECTS'] = 'Drug Effects:',
+    ['INFO__CLEAR_DRUG_EFFECTS'] = 'Clearing Drug Effects',
+    ['DEBUG__DETECTED_TARGET_SYSTEM'] = 'Detected Target System: %s',
+    ['DEBUG__TARGET_SYSTEM_STATUS'] = 'Target System running: %s',
+    ['DEBUG__REGISTERED_ALL_PLANTS'] = 'Registered All Plants Target'
+
 }
 
 function _U(string)

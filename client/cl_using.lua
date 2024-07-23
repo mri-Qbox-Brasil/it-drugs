@@ -32,7 +32,7 @@ end
 
 local setDrugEffects = function(effects)
 
-    if Config.Debug then lib.print.info('Drug Effects:', effects) end
+    if Config.Debug then lib.print.info(_U('INFO__DRUG_EFFECTS'), effects) end
     local ped = PlayerPedId()
     for _, effect in pairs(effects) do
 
@@ -92,11 +92,11 @@ local setDrugEffects = function(effects)
             SetPedArmour(ped, 100)
         end
     end
-    if Config.Debug then lib.print.info('Drug Effects:', drugEffects) end
+    if Config.Debug then lib.print.info(_U('INFO__DRUG_EFFECTS'), drugEffects) end
 end
 
 local clearDrugEffects = function()
-    if Config.Debug then lib.print.info('Clearing Drug Effects') end
+    if Config.Debug then lib.print.info(_U('INFO__CLEAR_DRUG_EFFECTS')) end
     local ped = PlayerPedId()
 
     SetPedMoveRateOverride(PlayerId(), 0.0)

@@ -26,13 +26,13 @@ end
 
 CreateThread(function()
     for dealerID, dealerData in pairs(Config.DrugDealers) do
-       
+
         local dealerPosition = lib.callback.await('it-drugs:server:getDealerPosition', false, dealerID)
 
         while not dealerPosition do
             Wait(500)
             dealerPosition = lib.callback.await('it-drugs:server:getDealerPosition', false, dealerID)
-            if Config.Debug then lib.print.info("New Dealer Poistion:", dealerPosition) end
+            if Config.Debug then lib.print.info(_U('DEALER__POSITION'), dealerPosition) end
         end
 
         local ped = spawnDealerPed(dealerData.ped, dealerPosition)
@@ -68,7 +68,7 @@ RegisterNetEvent('it-drugs:client:handelBuyInteraction', function(args)
         return
     end
 
-    TriggerServerEvent('it-drugs:server:buyDealerItem', dealerId, item, amount, total)    
+    TriggerServerEvent('it-drugs:server:buyDealerItem', dealerId, item, amount, total)
 end)
 
 

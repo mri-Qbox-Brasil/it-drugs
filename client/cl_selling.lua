@@ -51,10 +51,10 @@ RegisterNetEvent('it-drugs:client:checkSellOffer', function(entity)
 
 	if copsAmount < Config.MinimumCops then
 		ShowNotification(nil, _U('NOTIFICATION__NOT__INTERESTED'), 'error')
-		if Config.Debug then lib.print.info('Not Enough Cops Online') end
+		if Config.Debug then lib.print.info(_U('INFO__NO_COPS')) end
 		return
 	end
-	
+
 	local isSoldtoPed = HasSoldPed(entity)
 	if isSoldtoPed then
 		ShowNotification(nil, _U('NOTIFICATION__ALLREADY__SPOKE'), 'error')
@@ -122,7 +122,7 @@ RegisterNetEvent('it-drugs:client:checkSellOffer', function(entity)
 
 	TriggerEvent('it-drugs:client:showSellMenu', {item = sellItemData.item, price = sellItemData.price, amount = sellAmount, entity = entity})
 	SetTimeout(Config.SellSettings['sellTimeout']*1000, function()
-		if Config.Debug then lib.print.info('Sell Menu Timeout... Current Menu', lib.getOpenContextMenu()) end
+		if Config.Debug then lib.print.info(_U('INFO__SELL_MENU_TIMEOUT'), lib.getOpenContextMenu()) end
 		if lib.getOpenContextMenu() ~= nil then
 			local currentMenu = lib.getOpenContextMenu()
 			if currentMenu == 'it-drugs-sell-menu' then
@@ -132,7 +132,7 @@ RegisterNetEvent('it-drugs:client:checkSellOffer', function(entity)
 			end
 		end
 	end)
-end) 
+end)
 
 -- \ event handler to server (execute server side)
 RegisterNetEvent('it-drugs:client:salesInitiate', function(cad)

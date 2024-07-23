@@ -42,8 +42,8 @@ end
 lib.callback.register('it-drugs:server:getDealerPosition', function(_, dealerID)
     lib.print.info("Getting position for dealer ID", dealerID)
     if not dealers[dealerID] then
-        if Config.Debug then lib.print.info("No Dealer Found") end
-        return "No Dealer Found"
+        if Config.Debug then lib.print.info(_U('NOTIFICATION__NO_DEALER_FOUND')) end
+        return _U('NOTIFICATION__NO_DEALER_FOUND')
     end
 
     lib.print.info("Dealer Position", dealers[dealerID]:getPosition())
@@ -62,7 +62,7 @@ RegisterNetEvent('it-drugs:server:buyDealerItem', function(dealerID, item, amoun
     local src = source
     -- check if data is valid
     if not dealers[dealerID] then
-        if Config.Debug then lib.print.info("Dealer not found", dealerID) end
+        if Config.Debug then lib.print.info(_U('NOTIFICATION__DEALER_NOT_FOUND'), dealerID) end
         return
     end
 

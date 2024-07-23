@@ -8,13 +8,13 @@ Locales['pt-br'] = {
 
     ['MENU__PLANT__LIFE'] = 'Saúde',
     ['MENU__PLANT__LIFE__META'] = 'A saúde da planta, se chegar a 0 a planta morrerá',
-    
+
     ['MENU__PLANT__STAGE'] = 'Estágio',
     ['MENU__PLANT__STAGE__META'] = 'O estágio da planta, se chegar a 100 a planta pode ser colhida',
 
     ['MENU__PLANT__FERTILIZER'] = 'Fertilizante',
     ['MENU__PLANT__FERTILIZER__META'] = 'Toda planta precisa de nutrientes para crescer, certifique-se de fertilizar sua planta',
-    
+
     ['MENU__PLANT__WATER'] = 'Água',
     ['MENU__PLANT__WATER__META'] = 'Certifique-se de que sua planta sempre tenha um pouco de água',
 
@@ -51,7 +51,7 @@ Locales['pt-br'] = {
 
     ['MENU__ADMIN__PLANT__MAIN'] = 'Gerenciamento de Plantas',
     ['MENU__ADMIN__TABLE__MAIN'] = 'Gerenciamento de Mesas',
-    
+
     ['MENU__PLANT__COUNT'] = 'Contagem Total de Plantas',
     ['MENU__PLANT__COUNT__DESC'] = 'Atualmente há %g plantas ativas',
 
@@ -100,6 +100,11 @@ Locales['pt-br'] = {
     ['MENU__TABLE__DESTROY'] = 'Destruir Mesa',
     ['MENU__TABLE__DESTROY__DESC'] = 'Destruir esta mesa',
 
+
+    ['NOTIFICATION__NO__PERMS'] = 'SEM PERMISSAO',
+    ['NOTIFICATION__NO__PERMS_CONTENT'] = 'Adicione isto no seu server.cfg para dar permissão para este usuário:  \n add_ace identifier.%s it-drugs allow #%s License  \n e reinicie seu servidor par aplicar as alterações.',
+    ['NOTIFICATION__NO_DEALER_FOUND'] = 'Vendedor não encontrado',
+    ['NOTIFICATION__DEALER_NOT_FOUND'] = 'Vendedor não encontrado.',
     ['NOTIFICATION__NO__MONEY'] = 'Você não tem dinheiro suficiente com você',
     ['NOTIFICATION__BUY__SUCCESS'] = 'Você comprou com sucesso alguns %s',
 
@@ -136,7 +141,7 @@ Locales['pt-br'] = {
     ['NOTIFICATION__ADMINMENU__USAGE'] = 'Por favor, use: /%s [plants/tables]',
 
     ['NOTIFICATION__COPY__CLIPBOARD'] = 'Informação copiada para a área de transferência: %s',
-    
+
     ['NOTIFICATION__TELEPORTED'] = 'Teleportado para a localização da entidade',
 
     ['NOTIFICATION__PLANT__DESTROYED'] = 'Planta destruída com sucesso',
@@ -166,7 +171,7 @@ Locales['pt-br'] = {
     ['INPUT__BUY__TEXT'] = 'Quantidade',
     ['INPUT__BUY__DESCRIPTION'] = 'Quantos %s você quer comprar?',
 
-    ['TARGET__DEALER__LABLE'] = 'Checar Vendedor',
+    ['TARGET__DEALER__LABEL'] = 'Checar Vendedor',
     ['TARGET__PLANT__LABEL'] = 'Checar Planta',
     ['TARGET__TABLE__LABEL'] = 'Usar Mesa',
     ['TARGET__SELL__LABEL'] = 'Conversar',
@@ -174,5 +179,15 @@ Locales['pt-br'] = {
     ['COMMAND__ADMINMENU'] = 'drugadmin',
     ['COMMAND__GROUNDHASH'] = 'getGroundHash',
 
-    ['COMMAND__GROUNDHASH__HELP'] = 'Obtenha o hash do chão atual'
+    ['COMMAND__GROUNDHASH__HELP'] = 'Obtenha o hash do chão atual',
+    ['BLIP__PROCESS_TABLE'] = 'Mesa de Processamento: %s',
+    ['DEALER__POSITION'] ='Nova Posição do Vendedor:',
+    ['INFO__NO_COPS'] = 'Sem policiais logados suficientes',
+    ['INFO__SELL_MENU_TIMEOUT'] = 'Timeout do Menu de Venda... Menu Atual',
+    ['INFO__SETUP_TARGET'] = 'Configurando Sistema de Alvo',
+    ['INFO__DRUG_EFFECTS'] = 'Efeitos de droga:',
+    ['INFO__CLEAR_DRUG_EFFECTS'] = 'Limpando efeitos de droga',
+    ['DEBUG__DETECTED_TARGET_SYSTEM'] = 'Sistema de Alvo detectado: %s',
+    ['DEBUG__TARGET_SYSTEM_STATUS'] = 'Sistema de Alvo rodando: %s',
+    ['DEBUG__REGISTERED_ALL_PLANTS'] = 'Todos os alvos de planta foram registrados'
 }
