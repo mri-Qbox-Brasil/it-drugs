@@ -9,8 +9,8 @@ RegisterNetEvent('it-drugs:client:showAdminAlertBox', function(args)
         size = 'xl',
         cancel = true,
         labels = {
-            cancel = 'Exit',
-            confirm = 'Copy'
+            cancel = _U('ALERTBOX__CANCEL'),
+            confirm = _U('ALERTBOX__CONFIRM')
         }
     })
 

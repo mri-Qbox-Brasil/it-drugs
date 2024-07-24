@@ -1,4 +1,6 @@
 Locales['en'] = {
+    ['ALERTBOX__CANCEL'] = 'Exit',
+    ['ALERTBOX__CONFIRM'] = 'Copy',
 
     ['MENU__DEALER'] = 'Dealer: %s',
     ['MENU__DEALER__DESC'] = 'Buy this for $%g a pice',

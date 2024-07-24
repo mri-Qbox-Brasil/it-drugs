@@ -1,4 +1,6 @@
 Locales['pt-br'] = {
+    ['ALERTBOX__CANCEL'] = 'Sair',
+    ['ALERTBOX__CONFIRM'] = 'Copiar',
 
     ['MENU__DEALER'] = 'Vendedor: %s',
     ['MENU__DEALER__DESC'] = 'Compre isso por R$%g cada',
