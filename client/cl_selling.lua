@@ -76,8 +76,8 @@ RegisterNetEvent('it-drugs:client:checkSellOffer', function(entity)
 		ClearPedTasks(PlayerPedId())
 		AddSoldPed(entity)
 
-		local coords = GetEntityCoords(entity)
-		SendPoliceAlert(coords)
+		--local coords = GetEntityCoords(entity)
+		SendPoliceAlert()
 		return
 	end
 

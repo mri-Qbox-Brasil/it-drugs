@@ -483,12 +483,15 @@ Config.BlacklistPeds = {
     "s_m_m_migrant_01",
 }
 
-function SendPoliceAlert(coords)
+function SendPoliceAlert()
+    if GetResourceState('ps-dispatch') == 'started' then
+        exports['ps-dispatch']:DrugDealing()
+    end
     -- Add You own police alert system here
-    local message = 'Drug Dealer spotted at '..coords
-    TriggerEvent('chat:addMessage', {
-        args = {message}
-    })
+    -- local message = 'Drug Dealer spotted at '..coords
+    -- TriggerEvent('chat:addMessage', {
+    -- args = {message}
+    -- })
 end
 
 function ShowNotification(source, message, type)
