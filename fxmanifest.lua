@@ -29,6 +29,9 @@ client_scripts {
     'client/cl_target.lua',
     'client/cl_using.lua',
     'client/cl_blips.lua',
+    'client/cl_zone_creator.lua',
+    'client/cl_zones.lua',
+    'client/cl_drug_table.lua',
 }
 
 server_scripts {
@@ -44,12 +47,14 @@ server_scripts {
     'server/sv_usableitems.lua',
     'server/sv_versioncheck.lua',
     'server/sv_webhooks.lua',
+    'server/sv_zones.lua',
     'server/database/sv_setupdatabase.lua'
 }
 
 files = {
     'server/database/drug_plants.sql',
     'server/database/drug_processing.sql',
+    'server/database/drug_zones.sql',
 }
 
 dependencies {

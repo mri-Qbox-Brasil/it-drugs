@@ -383,6 +383,8 @@ RegisterNetEvent("it-drugs:client:showSellMenu", function(data)
     local amount = data.amount
     local price = data.price
     local ped = data.entity
+    local zoneGang = data.zoneGang
+    local zoneName = data.zoneName
 
     local itemLabel = it.getItemLabel(item)
 
@@ -401,7 +403,15 @@ RegisterNetEvent("it-drugs:client:showSellMenu", function(data)
                 description = _U('MENU__SELL__ACCEPT__DESC'),
                 arrow = true,
                 event = "it-drugs:client:salesInitiate",
-                args = {type = 'buy', item = item, price = price, amount = amount, tped = ped}
+                args = {
+                    type = 'buy', 
+                    item = item, 
+                    price = price, 
+                    amount = amount, 
+                    tped = ped,
+                    zoneGang = data.zoneGang,
+                    zoneName = data.zoneName
+                }
             },
             {
                 title = _U('MENU__SELL__REJECT'),
