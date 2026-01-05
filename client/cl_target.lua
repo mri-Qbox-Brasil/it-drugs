@@ -1,5 +1,9 @@
 if Config.Debug and Config.Target then lib.print.info('Setting up Target System') end
 
+-- Garantir que as variáveis globais existam
+if not drugZones then drugZones = {} end
+if not currentEditingZone then currentEditingZone = nil end
+
 -- ┌────────────────────────────────────────────────────────┐
 -- │ ____  _             _     _____                    _   │
 -- │|  _ \| | __ _ _ __ | |_  |_   _|_ _ _ __ __ _  ___| |_ │
@@ -177,10 +181,56 @@ local function isPedBlacklisted(ped)
 	return false
 end
 
+-- Função para verificar se um ped está dentro de uma zona dinâmica
+local function isPedInDynamicZone(ped)
+    if not ped or not DoesEntityExist(ped) then return false end
+    if not drugZones then return false end
+    
+    local pedCoords = GetEntityCoords(ped)
+    
+    for zoneId, zone in pairs(drugZones) do
+        if zone.polygon_points and #zone.polygon_points >= 3 then
+            local x, y, z = pedCoords.x, pedCoords.y, pedCoords.z
+            local inside = false
+            local j = #zone.polygon_points
+            
+            for i = 1, #zone.polygon_points do
+                local pi = zone.polygon_points[i]
+                local pj = zone.polygon_points[j]
+                
+                if ((pi.y > y) ~= (pj.y > y)) and (x < (pj.x - pi.x) * (y - pi.y) / (pj.y - pi.y) + pi.x) then
+                    inside = not inside
+                end
+                j = i
+            end
+            
+            -- Verificar altura
+            if inside then
+                local minZ = zone.polygon_points[1].z
+                for i = 2, #zone.polygon_points do
+                    if zone.polygon_points[i].z < minZ then
+                        minZ = zone.polygon_points[i].z
+                    end
+                end
+                local maxZ = minZ + (zone.thickness or 10.0)
+                inside = z >= minZ and z <= maxZ
+            end
+            
+            if inside then
+                return true
+            end
+        end
+    end
+    
+    return false
+end
+
 -- Create the selling Targets
 CreateSellTarget = function()
     if Config.Target == 'qb-target' then
-        if not exports['qb-target'] then return end
+        if not exports['qb-target'] then 
+            return 
+        end
         exports['qb-target']:AddGlobalPed({
             options = {
                 {
@@ -191,7 +241,24 @@ CreateSellTarget = function()
                     end,
                     canInteract = function(entity)
                         if not IsPedDeadOrDying(entity, false) and not IsPedInAnyVehicle(entity, false) and (GetPedType(entity)~=28) and (not IsPedAPlayer(entity)) and (not isPedBlacklisted(entity)) and not IsPedInAnyVehicle(PlayerPedId(), false) then
-                            return true
+                            -- Verificar se está em zona estática ou dinâmica
+                            local playerPed = PlayerPedId()
+                            local playerCoords = GetEntityCoords(playerPed)
+                            
+                            -- Se o player está em uma zona dinâmica, permitir interação
+                            if currentEditingZone and drugZones and drugZones[currentEditingZone] then
+                                return true
+                            end
+                            
+                            -- Verificar se está em zona estática
+                            if currentZone then
+                                return true
+                            end
+                            
+                            -- Verificar se o NPC está em uma zona dinâmica
+                            if isPedInDynamicZone and isPedInDynamicZone(entity) then
+                                return true
+                            end
                         end
                         return false
                     end,
@@ -213,7 +280,24 @@ CreateSellTarget = function()
                 end,
                 canInteract = function(entity, _, _, _, _)
                     if not IsPedDeadOrDying(entity, false) and not IsPedInAnyVehicle(entity, false) and (GetPedType(entity)~=28) and (not IsPedAPlayer(entity)) and (not isPedBlacklisted(entity)) and not IsPedInAnyVehicle(PlayerPedId(), false) then
-                        return true
+                        -- Verificar se está em zona estática ou dinâmica
+                        local playerPed = PlayerPedId()
+                        local playerCoords = GetEntityCoords(playerPed)
+                        
+                        -- Se o player está em uma zona dinâmica, permitir interação com QUALQUER NPC
+                        if currentEditingZone and drugZones and drugZones[currentEditingZone] then
+                            return true
+                        end
+                        
+                        -- Verificar se está em zona estática
+                        if currentZone then
+                            return true
+                        end
+                        
+                        -- Verificar se o NPC está em uma zona dinâmica (fallback)
+                        if isPedInDynamicZone and isPedInDynamicZone(entity) then
+                            return true
+                        end
                     end
                     return false
                 end,

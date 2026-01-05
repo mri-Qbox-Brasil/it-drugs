@@ -390,7 +390,7 @@ Config.Drugs = { -- Create you own drugs
 -- └──────────────────────────────┘
 
 ---@desativado Estamos usando o qbx_drugs para vendas de drogas (é melhor!)
-Config.EnableSelling = false -- Enable selling system
+Config.EnableSelling = true -- Enable selling system
 
 Config.MinimumCops = 0 -- Minimum cops required to sell drugs
 Config.OnlyCopsOnDuty = true -- Check if cops are on-duty (Only QBCore).
@@ -524,3 +524,46 @@ Config.EnableVersionCheck = false -- Enable version check
 Config.Branch = 'main' -- Set to 'master' to use the master branch, set to 'development' to use the dev branch
 Config.Debug = false -- Set to true to enable debug mode
 Config.DebugPoly = false -- Set to true to enable debug mode for PolyZone
+
+-- Sistema de Debug para Zonas de Drogas
+Config.ZoneDebug = {
+    enabled = false, -- Ativar/desativar modo debug (pode ser alterado via comando)
+    showZones = true, -- Mostrar zonas coloridas na tela
+    showInfo = true, -- Mostrar informações na tela (zona atual, NPCs, etc)
+    showLogs = true, -- Mostrar logs no console
+    zoneColors = {
+        default = {r = 0, g = 255, b = 0, a = 100}, -- Verde para zonas públicas
+        owned = {r = 255, g = 0, b = 0, a = 100}, -- Vermelho para zonas com dono
+        current = {r = 0, g = 0, b = 255, a = 150}, -- Azul para zona atual
+        table = {r = 255, g = 255, b = 0, a = 150}, -- Amarelo para mesas
+    },
+    lineWidth = 2.0, -- Largura das linhas das zonas
+    pointSize = 0.3, -- Tamanho dos pontos dos vértices
+}
+
+
+--Sistema de Zonas de Drogas
+
+
+-- Grupos de admin que podem criar zonas de drogas
+Config.AdminGroups = { 'admin', 'god', 'owner', 'superadmin' }
+
+-- Configurações para mesas de drogas
+Config.DrugTable = {
+    defaultModel = 'bkr_prop_weed_table_01a', -- Modelo padrão da mesa
+    npcSpawnChance = 30, -- Chance de spawnar NPC (1-100)
+    npcSpawnDistance = 50.0, -- Distância máxima do player para spawnar NPC- DESATIVADO
+    npcLifetime = 60000, -- Tempo de vida do NPC em ms (60 segundos)
+    maxNPCsPerTable = 3, -- Máximo de NPCs por mesa simultaneamente
+    tableNPCSpawnInterval = 10000, -- Intervalo entre verificações de spawn para mesas (ms)
+}
+
+-- Configurações para NPCs que passam pela zona (sem mesa)
+Config.ZoneWalkers = {
+    density = 10, -- Densidade de NPCs (1-10, quanto maior mais NPCs)
+    maxWalkers = 10, -- Máximo de NPCs walkers por zona simultaneamente
+    spawnInterval = 15000, -- Intervalo entre verificações de spawn para walkers (ms)
+    spawnChance = 40, -- Chance de spawnar NPC walker (1-100)
+    lifetime = 180000, -- Tempo de vida do NPC walker em ms (180 segundos = 3 minutos)
+    patrolTime = 30000, -- Tempo que o NPC fica patrulhando dentro da zona antes de sair (ms)
+}
