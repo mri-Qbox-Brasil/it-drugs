@@ -1,49 +1,22 @@
 -- Setup the Database from the it_drugs.sql file
 DatabaseSetuped = false
 
-local function setupDatabase()
-    local drugPlantsFile = LoadResourceFile(GetCurrentResourceName(), 'server/database/drug_plants.sql')
+-- Statements run one at a time: on a fresh database an async ALTER could reach the server before its CREATE TABLE.
+local function runSqlFile(path)
+    local file = LoadResourceFile(GetCurrentResourceName(), path)
 
-    local plantStatements = {}
-    for line in drugPlantsFile:gsub("\r\n", "\n"):gsub("\n\n", "\n"):gmatch("[^\n]+") do
-        table.insert(plantStatements, line)
+    for line in file:gsub("\r\n", "\n"):gmatch("[^\n]+") do
+        local ok, response = pcall(MySQL.rawExecute.await, line, {})
+        if ok and response then
+            if Config.Debug then lib.print.info('Executed SQL Statment ' .. line) end
+        else
+            lib.print.error('Failed to execute SQL statement: ' .. line)
+        end
     end
-    
-    for i = 1, #plantStatements do
-        MySQL.rawExecute(plantStatements[i], {}, function(response)
-            if response then
-                if Config.Debug then lib.print.info('Executed SQL Statment ' .. plantStatements[i]) end
-            else
-                lib.print.error('Failed to execute SQL statement: ' .. plantStatements[i])
-                return
-            end
-        end)
-    end
-    
-    local drugProcessingFile = LoadResourceFile(GetCurrentResourceName(), 'server/database/drug_processing.sql')
-    
-    local proccessingStatements = {}
-    for line in drugProcessingFile:gsub("\r\n", "\n"):gsub("\n\n", "\n"):gmatch("[^\n]+") do
-        table.insert(proccessingStatements, line)
-    end
-    
-    for i = 1, #proccessingStatements do
-        MySQL.rawExecute(proccessingStatements[i], {}, function(response)
-            if response then
-                if Config.Debug then lib.print.info('Executed SQL Statment ' .. proccessingStatements[i]) end
-            else
-                lib.print.error('Failed to execute SQL statement: ' .. proccessingStatements[i])
-                return
-            end
-        end)
-    end
-
-    return true
 end
 
 CreateThread(function()
-    while not setupDatabase() do
-        Wait(100)
-    end
+    runSqlFile('server/database/drug_plants.sql')
+    runSqlFile('server/database/drug_processing.sql')
     DatabaseSetuped = true
 end)
