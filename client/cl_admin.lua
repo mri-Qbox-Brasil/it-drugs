@@ -17,7 +17,7 @@ RegisterNetEvent('it-drugs:client:showAdminAlertBox', function(args)
     if alert == 'confirm' then
         -- copy content to clipboard
         lib.setClipboard('add_ace identifier.'..userLicense..' it-drugs allow #'..username..' License')
-        ShowNotification(nil, _U('NOTIFICATION__COPY__CLIPBOARD'):format('User License'), "success")
+        ShowNotification(nil, _U('NOTIFICATION__COPY__CLIPBOARD'):format('User License'), "Success")
     end
 end)
 
@@ -27,15 +27,15 @@ RegisterNetEvent('it-drugs:client:addAllAdminBlips', function(args)
     if type == 'plants' then
         local allPlants = lib.callback.await('it-drugs:server:getPlants', false)
         for _, data in pairs(allPlants) do
-            AddAdminBlip(data.id, data.coords, Config.Plants[data.type].label, 'plant')
+            AddAdminBlip(data.id, data.coords, Config.Plants[data.seed].label, 'plant')
         end
-        ShowNotification(nil, _U('NOTIFICATION__ADD__BLIP'), "success")
+        ShowNotification(nil, _U('NOTIFICATION__ADD__BLIP'), "Success")
     elseif type == 'tables' then
         local allTables = lib.callback.await('it-drugs:server:getTables', false)
         for _, data in pairs(allTables) do
-            AddAdminBlip(data.id, data.coords, _U('BLIP__PROCESS_TABLE'):format(Config.ProcessingTables[data.type].type), 'processing')
+            AddAdminBlip(data.id, data.coords, _U('BLIP__PROCESS_TABLE'):format(Config.ProcessingTables[data.tableType].label), 'processing')
         end
-        ShowNotification(nil, _U('NOTIFICATION__ADD__BLIP'), "success")
+        ShowNotification(nil, _U('NOTIFICATION__ADD__BLIP'), "Success")
     end
 end)
 
@@ -47,10 +47,18 @@ RegisterNetEvent('it-drugs:client:addAdminBlip', function(args)
 
     if type == 'plant' then
         AddAdminBlip(id, coords, Config.Plants[entityType].label, 'plant')
-        ShowNotification(nil, _U('NOTIFICATION__ADD__BLIP'), "success")
+        ShowNotification(nil, _U('NOTIFICATION__ADD__BLIP'), "Success")
     elseif type == 'table' then
+<<<<<<< fork
         AddAdminBlip(id, coords, _U('BLIP__PROCESS_TABLE'):format(Config.ProcessingTables[entityType].type), 'processing')
         ShowNotification(nil, _U('NOTIFICATION__ADD__BLIP'), "success")
+||||||| base
+        AddAdminBlip(id, coords, 'Proccessing Table: '..Config.ProcessingTables[entityType].type, 'processing')
+        ShowNotification(nil, _U('NOTIFICATION__ADD__BLIP'), "success")
+=======
+        AddAdminBlip(id, coords, Config.ProcessingTables[entityType].label, 'processing')
+        ShowNotification(nil, _U('NOTIFICATION__ADD__BLIP'), "Success")
+>>>>>>> upstream
     end
 end)
 
@@ -61,14 +69,14 @@ RegisterNetEvent('it-drugs:client:removeAllAdminBlips', function(args)
         local allPlants = lib.callback.await('it-drugs:server:getPlants', false)
         for _, data in pairs(allPlants) do
             RemoveAdminBlip(data.id)
-            ShowNotification(nil, _U('NOTIFICATION__REMOVE__BLIP'), "success")
         end
+        ShowNotification(nil, _U('NOTIFICATION__REMOVE__BLIP'), "Success")
     elseif type == 'tables' then
         local allTables = lib.callback.await('it-drugs:server:getTables', false)
         for _, data in pairs(allTables) do
             RemoveAdminBlip(data.id)
-            ShowNotification(nil, _U('NOTIFICATION__REMOVE__BLIP'), "success")
         end
+        ShowNotification(nil, _U('NOTIFICATION__REMOVE__BLIP'), "Success")
     end
 end)
 
@@ -88,9 +96,9 @@ RegisterNetEvent('it-drugs:client:generatePlantListMenu', function()
             id = data.id,
             owner = data.owner,
             coords = data.coords,
-            entity = data.entity,
-            type = data.type,
-            label = Config.Plants[data.type].label,
+            netId = data.netId,
+            type = data.seed,
+            label = Config.Plants[data.seed].label..' ('..data.id..')',
             distance = distance
         }
         table.insert(plantList, temp)
@@ -115,10 +123,10 @@ RegisterNetEvent('it-drugs:client:generateTableListMenu', function()
         local temp = {
             id = data.id,
             coords = data.coords,
-            type = data.type,
-            label = 'Proccessing Table: '..Config.ProcessingTables[data.type].type,
+            type = data.tableType,
+            label = Config.ProcessingTables[data.tableType].label..' ('..data.id..')',
             distance = distance,
-            entity = data.entity
+            netId = data.netId
         }
         table.insert(tableList, temp)
     end
@@ -148,7 +156,7 @@ RegisterNetEvent('it-drugs:client:showGroundHash', function()
     if alert == 'confirm' then
         -- copy content to clipboard
         lib.setClipboard(arg5)
-        ShowNotification(nil, _U('NOTIFICATION__COPY__CLIPBOARD'):format(arg5), "success")
+        ShowNotification(nil, _U('NOTIFICATION__COPY__CLIPBOARD'):format(arg5), "Success")
     end
 
 end)

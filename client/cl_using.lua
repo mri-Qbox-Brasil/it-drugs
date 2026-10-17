@@ -8,8 +8,7 @@ local drugEffects = {
     ['moreStrength'] = false,
     ['healthRegen'] = false,
     ['foodRegen'] = false,
-    ['fullArmor'] = false,
-    ['halfArmor'] = false,
+    ['armor'] = false,
     ['drunkWalk'] = false,
     ['psycoWalk'] = false,
     ['outOfBody'] = false,
@@ -36,7 +35,11 @@ local setDrugEffects = function(effects)
     local ped = PlayerPedId()
     for _, effect in pairs(effects) do
 
-        if drugEffects[effect] == nil then return end
+        -- regex 'armor-([0-9]+)' to get the armor value
+        local armor = effect:match('armor%-([0-9]+)') -- armor-99
+        if armor then effect = 'armor' end
+
+        if drugEffects[effect] == nil then if Config.Debug then lib.print.error('[setDrugEffects] | unable to find effect', effect) end return end
         drugEffects[effect] = true
 
         if effect == "runningSpeedIncrease" then
@@ -86,10 +89,10 @@ local setDrugEffects = function(effects)
             CreateThread(function()
                 AnimpostfxPlay("FocusIn", 100000, true)
             end)
-        elseif effect == "halfArmor" then
-            SetPedArmour(ped, GetPedArmour(ped) + 50)
-        elseif effect == "fullArmor" then
-            SetPedArmour(ped, 100)
+        elseif effect == "armor" then
+            -- get armor value from the effect
+            local armorValue = tonumber(armor)
+            SetPedArmour(ped, GetPedArmour(ped) + armorValue)
         end
     end
     if Config.Debug then lib.print.info(_U('INFO__DRUG_EFFECTS'), drugEffects) end
@@ -236,15 +239,7 @@ end)
 CreateThread(function()
     while true do
         if drugEffects['foodRegen'] then
-            if it.getCoreName() == "qb-core" then
-                TriggerEvent("QBCore:Server:SetMetaData", "hunger", 40000)
-                TriggerEvent("QBCore:Server:SetMetaData", "thirst", 20000)
-                Wait(4000)
-            elseif it.getCoreName() == "esx" then
-                TriggerEvent("esx_status:set", "hunger", 100000)
-                TriggerEvent("esx_status:set", "thirst", 100000)
-                Wait(4000)
-            end
+            FoodRegen()
         else
             Wait(5000)
         end
@@ -278,19 +273,22 @@ RegisterNetEvent('it-drugs:client:takeDrug', function(drugItem)
     local drugData = Config.Drugs[drugItem]
     local ped = PlayerPedId()
 
+    if drugData == nil then
+        ShowNotification(nil, _U('NOTIFICATION__DRUG__NO__EFFECT'), "error")
+        return
+    end
+
+    if Config.Debug then lib.print.info('[takeDrug] | Drug Data:', drugData) end
     if cooldowns[drugItem] ~= nil then
         local time = GetGameTimer()
         if time > cooldowns[drugItem] then
             cooldowns[drugItem] = time + drugData.cooldown * 1000 + drugData.time * 1000
+        else
+            ShowNotification(nil, _U('NOTIFICATION__DRUG__COOLDOWN'), "info")
+            return
         end
     else
         cooldowns[drugItem] = GetGameTimer() + (drugData.cooldown * 1000 + (drugData.time * 1000))
-        lib.print.info('Cooldowns:', cooldowns)
-    end
-
-    if drugData == nil then
-        ShowNotification(nil, _U('NOTIFICATION__DRUG__NO__EFFECT'), "error")
-        return
     end
 
     currentDrug = drugItem
@@ -305,8 +303,8 @@ RegisterNetEvent('it-drugs:client:takeDrug', function(drugItem)
         loadAnimDict('amb@world_human_smoking_pot@female@base')
         TaskPlayAnim(ped, 'amb@world_human_smoking_pot@female@base', 'base', 3.0, 3.0, 3000, 48, 0, false, false, false)
     end
-
     setDrugEffects(drugData.effects)
+
     SetTimeout(drugData.time * 1000, clearDrugEffects)
 end)
 

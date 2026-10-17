@@ -29,7 +29,6 @@ Locales['en'] = {
     ['MENU__ITEM'] = 'Items',
     ['MENU__ITEM__DESC'] = 'Use this item to take care of your plant',
 
-
     ['MENU__PROCESSING'] = 'Proccessing',
     ['MENU__RECIPE__DESC'] = 'Process your drugs with this recipe',
 
@@ -42,9 +41,23 @@ Locales['en'] = {
     ['MENU__TABLE__REMOVE'] = 'Remove Table',
     ['MENU__TABLE__REMOVE__DESC'] = 'Get this table back',
 
+    ['MENU__DEALER__ACTION'] = "What do you want to do?",
+
+    ['MENU__DEALER__BUY'] = 'Buy',
+    ['MENU__DEALER__BUY__DESC'] = 'Buy items from the dealer',
+    ['MENU__DEALER_BUY_ITEM__DESC'] = 'Buy %s for $%g per item',
+
+    ['MENU__DEALER_SELL'] = 'Sell',
+    ['MENU__DEALER__SELL_DESC'] = 'Sell items to the dealer',
+    ['MENU__DEALER_SELL_ITEM__DESC'] = 'Sell %s for $%g per item',
+
     ['MENU__SELL'] = 'Sell',
     ['MENU__SELL__DEAL'] = 'Deal',
     ['MENU__SELL__DESC'] = 'Sell %s (x%g) for $%g',
+    ['MENU__SEEL__DESC__ZERO'] = 'Sell %s (x%g) and get:',
+
+    ['MENU__SELL__REWARD'] = 'Items:',
+    ['MENU__SELL_REWARD_DESC'] = 'You will get x%g',
 
     ['MENU__SELL__ACCEPT'] = 'Accept offer',
     ['MENU__SELL__ACCEPT__DESC'] = 'Accept the current offer',
@@ -107,8 +120,11 @@ Locales['en'] = {
     ['NOTIFICATION__NO__PERMS_CONTENT'] = 'Add this your server.cfg file to give permission to this user:  \n add_ace identifier.%s it-drugs allow #%s License  \n And restart your server to apply the changes',
     ['NOTIFICATION__NO_DEALER_FOUND'] = 'No Dealer Found',
     ['NOTIFICATION__DEALER_NOT_FOUND'] = 'Dealer not found.',
-    ['NOTIFICATION__NO__MONEY'] = 'You don´t have enought money on you',
-    ['NOTIFICATION__BUY__SUCCESS'] = 'You successfuly bought some %s',
+    ['NOTIFICATION__DEALER__SELL__SUCCESS'] = 'You have successfully sold %gx %s for $%g',
+    ['NOTIFICATION__DEALER__BUY__SUCCESS'] = 'You have successfully bought %gx %s for $%g',
+    ['NOTIFICATION__NO__MONEY'] = 'You don`t have enough money on you',
+    ['NOTIFICATION__BUY__SUCCESS'] = 'You successfully bought some %s',
+    ['NOTIFICATION__DEALER__NO__ITEM'] = 'You don`t have enough items to sell',
 
     ['NOTIFICATION__IN__VEHICLE'] = 'You can´t do this in a Vehicle',
     ['NOTIFICATION__CANT__PLACE'] = 'You can´t do this here',
@@ -152,6 +168,8 @@ Locales['en'] = {
     ['NOTIFICATION__ADD__BLIP'] = 'Added Blip to Map',
     ['NOTIFICATION__REMOVE__BLIP'] = 'Removed Blip from Map',
 
+    ['NOTIFICATION__NEED_LIGHTER'] = 'You need a lighter to destroy the plant',
+
     ['PROGRESSBAR__SPAWN__PLANT'] = 'Planting...',
     ['PROGRESSBAR__HARVEST__PLANT'] = 'Harvesting...',
     ['PROGRESSBAR__SOAK__PLANT'] = 'Watering...',
@@ -163,6 +181,8 @@ Locales['en'] = {
     ['PROGRESSBAR__PROCESS__DRUG'] = 'Processing...',
 
     ['INTERACTION__PLACING__TEXT'] = '[E] - Place Plant / [G] - Cancel',
+    ['INTERACTION__PLACING_TABLE__TEXT'] = '[E] - Place Table / [G] - Cancel',
+	
     ['INTERACTION__INTERACT_TEXT'] = '[E] - Interact',
 
     ['INPUT__AMOUNT__HEADER'] = 'Processing',
@@ -172,6 +192,7 @@ Locales['en'] = {
     ['INPUT__BUY__HEADER'] = 'Buying',
     ['INPUT__BUY__TEXT'] = 'Amount',
     ['INPUT__BUY__DESCRIPTION'] = 'How many %s do you want to buy?',
+    ['INPUT__SELL__DESCRIPTION'] = 'How many %s do you want to sell?',
 
     ['TARGET__DEALER__LABEL'] = 'Check Dealer',
     ['TARGET__PLANT__LABEL'] = 'Check Plant',
@@ -191,8 +212,11 @@ Locales['en'] = {
     ['INFO__CLEAR_DRUG_EFFECTS'] = 'Clearing Drug Effects',
     ['DEBUG__DETECTED_TARGET_SYSTEM'] = 'Detected Target System: %s',
     ['DEBUG__TARGET_SYSTEM_STATUS'] = 'Target System running: %s',
-    ['DEBUG__REGISTERED_ALL_PLANTS'] = 'Registered All Plants Target'
+    ['DEBUG__REGISTERED_ALL_PLANTS'] = 'Registered All Plants Target',
 
+    ['3DTEXT__PLANT__LABLE'] = 'Press ~g~E~w~ to interact with plant',
+    ['3DTEXT__TABLE__LABLE'] = 'Press ~g~E~w~ to interact with table',
+    ['3DTEXT__DEALER__LABLE'] = 'Press ~g~E~w~ to interact with dealer',
 }
 
 function _U(string)
